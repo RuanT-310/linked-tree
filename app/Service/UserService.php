@@ -2,7 +2,7 @@
 namespace App\Service;
 
 use App\Dto\StoreUserDto;
-use App\Dto\UserUpdateDto;
+use App\Dto\UpdateUserDto;
 use App\Models\User;
 
 class UserService {
@@ -35,7 +35,7 @@ class UserService {
         }
         $user->delete();
     }
-    public function update(UserUpdateDto $request, string $id) {
+    public function update(UpdateUserDto $request, string $id) {
         throw new \Exception('Metodo update não implementado');
     }
     public function index() {

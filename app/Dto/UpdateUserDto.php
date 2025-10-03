@@ -1,7 +1,7 @@
 <?php
 namespace App\Dto;
 
-class UserUpdateDto {
+class UpdateUserDto {
     public string $name;
     public string $email;
 }
