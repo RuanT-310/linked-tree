@@ -4,7 +4,8 @@ namespace App\Service;
 use App\Dto\StoreUserDto;
 use App\Dto\UserUpdateDto;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 class UserService {
     public function show(string $id) {
         $user = User::find($id);
@@ -21,8 +22,9 @@ class UserService {
         $user = User::create([
             'name' => $data->name,
             'email' => $data->email,
-            'password' => $data->password,
+            'password' => Hash::make($data->password),
         ]);
+        Log::debug('Usuário criado?', ['id' => $user->id]); // Veja se o ID aparece no log
         return $user;
     }
 

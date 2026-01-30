@@ -45,7 +45,7 @@ class UserViewController extends Controller
         $dto = new StoreUserDto();
         $dto->name = $request->name;
         $dto->email = $request->email;
-        $dto->password = Hash::make($request->password);
+        $dto->password = $request->password;
 
         UserService::store($dto);
         
